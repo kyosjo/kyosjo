@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For kyla </title>
+    <style>
+      
+
+        :root {
+            --primary: #ff6b81;
+            --secondary: #ff8e8e;
+            --light: #ffd3d3;
+            --dark: #333;
+            --accent: #ff4757;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff5f5;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            opacity: 0;
+            color: var(--primary);
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .couple-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin: 1rem auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .couple-img:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .memory {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+        }
+
+        .memory h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .memory p {
+            margin-bottom: 1rem;
+        }
+
+        .memory-img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 1rem 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .memory-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .love-meter {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .meter-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .meter-container {
+            height: 30px;
+            background-color: #f1f1f1;
+            border-radius: 50px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .meter-bar {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 50px;
+            transition: width 0.5s;
+            transform-origin: left;
+            position: relative;
+        }
+
+        .meter-value {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .love-letter {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .letter-content {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: #fff9f9;
+            position: relative;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .music-ctrl {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        .secret-message {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .secret-message.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .secret-message:hover {
+            transform: scale(1.1) !important;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .modal.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-20px);
+            transition: transform 0.3s;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content {
+                padding: 2rem 1rem;
+            }
+            
+            .memory {
+                padding: 1.5rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <audio id="bg-music" loop>
+        <source src="snaptik_7467241266514824455.mp4">
+    </audio>
+    
+    <header>
+        <div class="header-content">
+            <h1> My idol kys</h1>
+            <p class="subtitle">for you</p>
+            <div class="couple-container">
+                <img id="couple-img" src="867A8026-FBD0-4FDD-BA71-9528630E6E2C.jpeg" class="couple-img" alt="Happy couple smiling and embracing on a beautiful sunset beach">
+            </div>
+            <button class="btn-primary pulse" id="surprise-btn">Click for a Surprise</button>
+        </div>
+    </header>
+
+    <main>
+
+
+        <section class="memory fade-in">
+
+            <img src="Messenger_creation_1D512937-2EC4-4BB4-94B7-776819FBB813.jpeg" class="memory-img" alt="Close-up portrait of a smiling woman with kind eyes and warm expression">
+            <img src="Messenger_creation_09AC5345-BB01-4693-B2E9-1B89D83C667A.jpeg.jpeg" class="memory-img" alt="Close-up portrait of a smiling woman with kind eyes and warm expression">
+        </section>
+
+            </div>
+            <p class="meter-value"><span id="love-value">100</span>%</p>
+            <button class="btn-primary" id="refresh-love">hehehehehe ikaw na yab eh</button>
+        </section>
+
+        
+
+        <section class="love-letter fade-in">
+            <h2>A Letter Just For You</h2>
+            <div class="letter-content">
+                <p>My Idol kys,</p>
+                <p>l'm not good with my words but i hope you know that you're more than enough and more than i could ever ask for. i want us to be better together for us and for ourselves, i promise all i want is to be with you especially when you're at your lowest.</p>
+                <p>If ever things get heavy, please don't keep it all to your self hah? you can always chat and talk to me instead, maybe a little rant session can ease the pain that your going through right now.</p>
+                
+                
+                <p id="signature">Ch_ris </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>idol kys</p>
+    </footer>
+
+    <div class="music-ctrl" id="music-ctrl" title="Toggle Music">
+        ♫
+    </div>
+    <div class="secret-message" id="secret-message">
+        💌
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <h2>My Sweetest Surprise</h2>
+            <p>I know it's not much, but I wanted to create something special just for you. You deserve the world and more, and I promise to keep finding ways to show you how much you mean to me.</p>
+            <p>i love you po </p>
+            <div class="confetti" id="confetti"></div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // Animation for love meter
+        function animateLoveMeter() {
+            const meter = document.getElementById('love-meter');
+            const value = document.getElementById('love-value');
+            
+            // Make it look dynamic
+            let width = 100;
+            let direction = -1;
+            let speed = 0.5;
+            
+            function updateMeter() {
+                width += direction * speed;
+                
+                if (width > 100) {
+                    width = 100;
+                    direction = -1;
+                } else if (width < 99) {
+                    width = 99;
+                    direction = 1;
+                }
+                
+                meter.style.width = width + '%';
+                value.textContent = Math.floor(width);
+            }
+            
+            setInterval(updateMeter, 100);
+        }
+
+        // Make the refresh love button more fun
+        function setupLoveButton() {
+            const button = document.getElementById('refresh-love');
+            const value = document.getElementById('love-value');
+            const meter = document.getElementById('love-meter');
+            
+            button.addEventListener('click', () => {
+                // Briefly animate to random value before returning to 100%
+                let current = 100;
+                const interval = setInterval(() => {
+                    current = Math.max(70, Math.min(current + (Math.random() * 10 - 5), 110));
+                    meter.style.width = current + '%';
+                    value.textContent = Math.floor(current);
+                    
+                    if (current >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            meter.style.width = '100%';
+                            value.textContent = '100';
+                        }, 500);
+                    }
+                }, 100);
+            });
+        }
+
+        // Surprise button with confetti
+        function setupSurpriseButton() {
+            const button = document.getElementById('surprise-btn');
+            const modal = document.getElementById('modal');
+            const closeBtn = document.getElementById('close-modal');
+            const confettiContainer = document.getElementById('confetti');
+            
+            button.addEventListener('click', () => {
+                modal.classList.add('show');
+                createConfetti();
+            });
+            
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('show');
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+        }
+
+        // Secret message button
+                function setupSecretMessage() {
+            const message = document.getElementById('secret-message');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    message.classList.add('show');
+                }
+            });
+            
+            message.addEventListener('click', () => {
+                alert("Even when you're all the way down here, I'm still thinking about you. Scroll back up!");
+            });
+        }
+
+        // Create confetti
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            confettiContainer.innerHTML = '';
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                confetti.style.backgroundColor = ['#ff6b81', '#ff8e8e', '#ff4757', '#ffd3d3'][Math.floor(Math.random() * 4)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.opacity = Math.random() * 0.5 + 0.5;
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear forwards`;
+                
+                confettiContainer.appendChild(confetti);
+                
+                // Add CSS for animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes confetti-fall {
+                        to {
+                            transform: translateY(100vh) rotate(${Math.random() * 360}deg);
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Smooth scroll for all links
+        function smoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        // Music control
+        function setupMusicControl() {
+            const musicCtrl = document.getElementById('music-ctrl');
+            const audio = document.getElementById('bg-music');
+            
+            audio.volume = 0.3; // Start at lower volume
+            
+            musicCtrl.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    musicCtrl.innerHTML = '♫';
+                    musicCtrl.title = "Music playing - Click to mute"
+                } else {
+                    audio.pause();
+                    musicCtrl.innerHTML = '🔇';
+                    musicCtrl.title = "Music muted - Click to play"
+                }
+            });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            setupMusicControl();
+            createHearts();
+            animateLoveMeter();
+            setupLoveButton();
+            setupSurpriseButton();
+            setupSecretMessage();
+            smoothScroll();
+            
+            // Optional: Change title after load
+            setTimeout(() => {
+                document.getElementById('title').textContent = "For The Love Of My Life";
+            }, 2000);
+            
+            // Optional: Allow some personalization
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            if (name) {
+                document.getElementById('signature').textContent = name;
+            }
+        });
+    </script>
+</body>
+</html>
